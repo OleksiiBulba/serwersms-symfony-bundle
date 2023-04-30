@@ -36,7 +36,7 @@ class SerwerSMS {
 
 	public $stats;
 
-	public $tamplates;
+	public $templates;
 
 	public $error;
     
@@ -89,7 +89,7 @@ class SerwerSMS {
                 throw new \Exception($result->message,(int) $result->code);
             }
         } else {
-            $result = json_decode($answer);
+            $result = json_decode($answer, true);
             if(isset($result->error)){
                 throw new \Exception($result->error->message,(int) $result->error->code);
             }
